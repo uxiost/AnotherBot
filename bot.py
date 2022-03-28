@@ -18,7 +18,7 @@ config = yaml.safe_load(open('./config.yml')) # .load(open('./config.yml'))
 TOKEN = config['credentials']['token']
 URL = config['url'].format(**config)
 
-logging.info(config)
+logging.info(URL+TOKEN)
 
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
