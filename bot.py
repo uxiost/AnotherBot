@@ -13,9 +13,10 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
-# Load credentials
-credentials = yaml.safe_load(open('./credentials.yml')) # .load(open('./credentials.yml'))
-TOKEN = credentials['token']
+# Load config
+config = yaml.safe_load(open('./config.yml')) # .load(open('./config.yml'))
+TOKEN = config['token']
+URL = config['url'].format(**config)
 
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
@@ -60,7 +61,7 @@ def main():
         listen="0.0.0.0",
         port=int(PORT),
         url_path=TOKEN,
-        webhook_url='https://yourherokuappname.herokuapp.com/' + TOKEN
+        webhook_url= URL + TOKEN
     )
 
     # Run the bot until you press Ctrl-C or the process receives SIGINT,

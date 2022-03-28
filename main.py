@@ -1,7 +1,10 @@
 # %%
+from distutils.command.config import config
 import yaml
 
-credentials = yaml.safe_load(open('./credentials.yml')) # .load(open('./credentials.yml'))
-print(credentials)
+config = yaml.safe_load(open('./config.yml')) # .load(open('./config.yml'))
+print(config)
 
+# %%
+url = config['url'].format(**config)
 # %%

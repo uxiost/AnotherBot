@@ -9,6 +9,8 @@
 4. subscription system
 
 #
+'''
 python3 -m venv env
 python3 -m pip install -r requirements.txt
 source env/bin/activate
+'''
