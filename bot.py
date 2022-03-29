@@ -5,7 +5,7 @@ import yaml
 
 
 
-PORT = int(os.environ.get('PORT', '8443'))
+
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -15,10 +15,10 @@ logger = logging.getLogger(__name__)
 
 # Load config
 # config = yaml.safe_load(open('./config.yml')) # .load(open('./config.yml'))
+
+PORT = int(os.environ.get('PORT', '8443'))
 TOKEN = os.environ['TOKEN'] #config['credentials']['token']
 URL = 'https://{}.herokuapp.com/'.format(os.environ['APPNAME']) #config['url'].format(**config)
-
-logging.info(URL+TOKEN)
 
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.

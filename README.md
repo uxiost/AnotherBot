@@ -17,7 +17,7 @@ python3 -m pip install -r requirements.txt
 
 
 
-source .env
+export $(xargs <.env)
 '''
 
 
