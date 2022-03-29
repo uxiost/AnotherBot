@@ -14,9 +14,9 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 # Load config
-config = yaml.safe_load(open('./config.yml')) # .load(open('./config.yml'))
-TOKEN = config['credentials']['token']
-URL = config['url'].format(**config)
+# config = yaml.safe_load(open('./config.yml')) # .load(open('./config.yml'))
+TOKEN = os.environ['TOKEN'] #config['credentials']['token']
+URL = 'https://{}.herokuapp.com/'.format(os.environ['APPNAME']) #config['url'].format(**config)
 
 logging.info(URL+TOKEN)
 

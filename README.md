@@ -15,7 +15,11 @@ source env/bin/activate
 
 python3 -m pip install -r requirements.txt
 
+
+
+source .env
 '''
 
+
 # Deployment
-git push heroku master
+git push heroku main
